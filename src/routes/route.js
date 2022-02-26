@@ -1,5 +1,55 @@
 const express = require('express');
 const router = express.Router();
+let players = [];
+
+
+ //Q.1
+router.post('/players', function(req, res){
+   
+    let player = req.body;
+    let playerName = player.name
+    for(let i=0; i<players.length; i++){
+        if(players[i].name == playerName){
+            res.send('Player is already exists')
+        }
+    }
+    players.push(player);
+    console.log('Here is the player Array',players)
+    res.send(players);
+});
+
+//Q.2
+router.post('/players/:playerName/bookings/:bookingId', function(req, res){
+    let name = req.params.playerName
+    let isPlayerPresent = false
+
+    for(let i=0; i<players.length; i++)
+    {
+        if(players[i].name == name){
+            isPlayerPresent = true
+        }
+    }
+    if(!isPlayerPresent){
+       return res.send('Player is not present')
+    }
+
+    let booking = req.body
+    let bookingId = req.params.bookingId
+    for(let i=0; i<players.length; i++){
+        if(players[i].name == name)
+        {
+            for(let j=0; j<player[i].bookings.length; j++){
+        if(player[i].bookings[j].bookingNumber == bookingId){
+        return res.send('Booking with this id is already present for this player')
+    }
+}
+            players[i].bookings.push(booking)
+        }
+    }
+    res.send(players)
+
+})
+
 
 router.get('/students/:name', function(req, res) {
     let studentName = req.params.name
