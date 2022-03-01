@@ -14,6 +14,8 @@ const newBooks = async function(req, res){
 
      module.exports.newBooks = newBooks
      module.exports.getBooks = getBooks
+
+     
 // const createUser= async function (req, res) {
 //     let data= req.body
 //     let savedData= await UserModel.create(data)
