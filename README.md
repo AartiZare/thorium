@@ -5,11 +5,10 @@
 // - settled : referes to a combination of either rejhected or fulfilled
 
 
+
 # What is a promise:
 - layman's definition: It is something in JS that tells us whether an operation has completed or not (pending)
 - technical definition: it is a JS object that represents whether an asynchronous operation(like db or axios call) is completed or not
-
-
 
 
 
@@ -29,6 +28,8 @@ Create API's to do each of the following:
                     {city:"Bangalore", temp: 301.2},
                     .......
                     ]
+
+
 
 3. Axios POST request assignment
 
